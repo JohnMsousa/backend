@@ -8,7 +8,11 @@ var router = express.Router();
  * @swagger
  * tags:
  *  name: API da Geração Tech
+<<<<<<< HEAD
  *  description: Documentação de refência da API GT SUL
+=======
+ *  description: Documentação de refência da API dos bunito da GT SUL
+>>>>>>> 83fc9f6ac2240bdf660e5491eca99a5cc8202431
  */
 
 /**
@@ -46,11 +50,20 @@ router.get("/", userController.getAllUsers);
  *          404:
  *            description: Usuário não encontrado
  */
+<<<<<<< HEAD
 
 router.get("/:id", authenticateToken, userController.getUserWithAddress);
 router.post("/", userController.createUser);
 router.post("/login", userController.loginUser);
 
 router.delete("/:id", userController.deleteUser);
+=======
+router.get("/:id", authenticateToken, userController.getUserWithAddress);
+
+router.post("/", userController.createUser);
+router.post("/login", userController.loginUser);
+
+router.put('/:id', userController.deleteUser);
+>>>>>>> 83fc9f6ac2240bdf660e5491eca99a5cc8202431
 
 module.exports = router;
