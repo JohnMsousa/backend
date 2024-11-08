@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 const swaggerJsDoc = require("swagger-jsdoc");
 
 const swaggerOptions = {
@@ -7,12 +6,12 @@ const swaggerOptions = {
     info: {
       title: "API - Geração Tech",
       version: "1.0.0",
-      description: "Documentação oficial da API",
+      description: "Documentação da API",
     },
     servers: [
       {
         url: "http://localhost:3000",
-        description: "servidor local",
+        description: "Servidor Local",
       },
     ],
     components: {
@@ -39,8 +38,30 @@ const swaggerOptions = {
               type: "string",
               description: "Senha do usuário",
             },
-            require: ["name", "email", "password"],
           },
+          required: ["name", "email", "password"],
+        },
+        Address: {
+          type: "object",
+          properties: {
+            userId: {
+              type: "integer",
+              description: "ID do usuário",
+            },
+            street: {
+              type: "string",
+              description: "Rua do endereço",
+            },
+            city: {
+              type: "string",
+              description: "Cidade do endereço",
+            },
+            state: {
+              type: "string",
+              description: "Estado do endereço",
+            },
+          },
+          required: ["userId", "street", "city", "state"],
         },
       },
     },
@@ -51,66 +72,8 @@ const swaggerOptions = {
     ],
   },
   apis: ["./routes/*.js"],
-=======
-const swaggerJsDoc = require('swagger-jsdoc');
-
-const swaggerOptions = {
-    swaggerDefinition: {
-        openapi: '3.0.0',
-        info: {
-            title: 'API - Geração Tech',
-            version: '1.0.0',
-            description: 'Documentação oficial da API'
-        },
-        servers: [
-            {
-                url: 'http://localhost:3000',
-                description: 'Servidor local'
-            }
-        ],
-        components: {
-            securitySchemes: {
-                bearerToken: {
-                    type: 'http',
-                    scheme: 'bearer',
-                    bearerFormat: 'JWT',
-                }
-            },
-            schemas: {
-                User: {
-                    type: 'object',
-                    properties: {
-                        name: {
-                            type: 'string',
-                            description: 'Nome do usuário'
-                        },
-                        email: {
-                            type: 'string',
-                            description: 'Email do usuário'
-                        },
-                        password: {
-                            type: 'string',
-                            description: 'Senha do usuário'
-                        },
-                        required: ['name', 'email', 'password']
-                    }
-                }
-            }
-        },
-        security: [
-            {
-                bearerToken: [],
-            }
-        ],
-    },
-    apis: ['./routes/*.js']
->>>>>>> 83fc9f6ac2240bdf660e5491eca99a5cc8202431
 };
 
 const swaggerDocs = swaggerJsDoc(swaggerOptions);
 
-<<<<<<< HEAD
 module.exports = swaggerDocs;
-=======
-module.exports = swaggerDocs;
->>>>>>> 83fc9f6ac2240bdf660e5491eca99a5cc8202431

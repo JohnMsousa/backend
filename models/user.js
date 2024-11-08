@@ -11,7 +11,6 @@ module.exports = (sequelize, DataTypes) => {
       // define association here
     }
   }
-<<<<<<< HEAD
   User.init(
     {
       name: DataTypes.STRING,
@@ -24,17 +23,6 @@ module.exports = (sequelize, DataTypes) => {
       modelName: "User",
     }
   );
-=======
-  User.init({
-    name: DataTypes.STRING,
-    email: DataTypes.STRING,
-    password: DataTypes.STRING,
-    active: DataTypes.BOOLEAN
-  }, {
-    sequelize,
-    modelName: 'User',
-  });
->>>>>>> 83fc9f6ac2240bdf660e5491eca99a5cc8202431
   User.associate = (models) => {
     User.hasMany(models.Address, {
       foreignKey: "userId",
